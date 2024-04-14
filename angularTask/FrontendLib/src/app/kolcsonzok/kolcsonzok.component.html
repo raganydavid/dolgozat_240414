@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col display-5">
+        Név
+    </div>
+</div>
+
+<ng-container *ngFor="let kolcsonzo of kolcsonzok">
+<div  class="row">
+    <div class="col-4 display-5">
+       {{kolcsonzok.name}}
+    </div>
+    <div class="col">
+        <button (click)="kolcsonzok.latszik = !kolcsonzok.latszik" type="button" class="btn btn-primary">Küldés</button>
+    </div>
+</div>
+<div *ngIf="kolcsonzok.latszik" class="row">
+    <app-kolcsonzok [kolcsonzokId]="kolcsonzok.id" [kolcsonzok]="kolcsonzok.tipp"></app-kolcsonzok>
+</div>
+</ng-container>

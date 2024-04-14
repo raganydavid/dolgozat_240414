@@ -1,0 +1,23 @@
+<div  class="row my-3">
+    <div *ngFor="let oszlop of oszlopok" class="col">
+        <input [(ngModel)]="newKolcs[oszlop]" type="number" class="form-control">
+    </div>
+    <div class="col">
+        <button (click)="newKolcsonzesek()" type="button" class="btn btn-primary">Add</button>
+    </div>
+    <div class="col">
+        
+    </div>
+    </div>
+    
+    <div *ngFor="let kolcs of kolcsonzesek" class="row my-1">
+    <div *ngFor="let oszlop of oszlopok" class="col">
+        <input [(ngModel)]="tipp[oszlop]" type="number" class="form-control">
+    </div>
+    <div class="col">
+        <button (click)="updateKolcs(kolcs)" type="button" class="btn btn-primary">Save</button>
+    </div>
+    <div class="col">
+        <button (click)="deleteKolcs(kolcs)" type="button" class="btn btn-primary">Delete</button>
+    </div>
+</div>
